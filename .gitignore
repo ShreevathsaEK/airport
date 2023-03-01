@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/airport-parking/node_modules
+/airport-parking/.pnp
+/airport-parking.pnp.js
+
+# testing
+/airport-parking/coverage
+
+# production
+/airport-parking/build
+
+# misc
+/airport-parking/.DS_Store
+/airport-parking/.env.local
+/airport-parking/.env.development.local
+/airport-parking/.env.test.local
+/airport-parking/.env.production.local
+
+/airport-parking/npm-debug.log*
+/airport-parking/yarn-debug.log*
+/airport-parking/yarn-error.log*
