@@ -1,4 +1,7 @@
 import React from 'react';
+import Footer from "./Footer";
+import Header from "./Header";
+import SearchForm from "./SearchForm";
 
 const HomePage =()=>{
 
