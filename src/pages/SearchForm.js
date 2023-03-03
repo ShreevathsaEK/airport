@@ -1,6 +1,6 @@
 import { useState } from "react";
 const SearchForm = () =>{
-        const [departureAirport,setDepartureAirport] = useState("Delhi");
+        const [departureAirport,setDepartureAirport] = useState('');
         const [checkin,setCheckin] = useState('');
         const [checkout,setCheckout] = useState('');
     
