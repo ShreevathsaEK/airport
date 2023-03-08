@@ -1,9 +1,12 @@
 import { useState } from "react";
 import moment from "moment";
 const SearchForm = () =>{
+        const today = moment().format('YYYY-MM-DD').toString();
+    const tomorrow = moment().add(1,'days').format('YYYY-MM-DD').toString();
+    
         const [departureAirport,setDepartureAirport] = useState("");
-        const [checkin,setCheckin] = useState('');
-        const [checkout,setCheckout] = useState('');
+        const [checkin,setCheckin] = useState(today);
+        const [checkout,setCheckout] = useState(tommorow);
         const [errors,seterrors] =useState( {
             departureAirport:false,
             checkin:false,
