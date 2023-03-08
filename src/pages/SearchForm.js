@@ -41,6 +41,9 @@ const SearchForm = () =>{
         }
     
         const submitHandler = (e) => {
+                if (moment(checkin) > moment(checkout)) {
+ setErrors((err) => ({ ...err, checkout: true }))
+ }
             console.log(departureAirport)
             console.log(checkin)
             console.log(checkout)
