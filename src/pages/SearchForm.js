@@ -6,7 +6,7 @@ const SearchForm = () =>{
     
         const [departureAirport,setDepartureAirport] = useState("");
         const [checkin,setCheckin] = useState(today);
-        const [checkout,setCheckout] = useState(tommorow);
+        const [checkout,setCheckout] = useState(tomorrow);
         const [errors,seterrors] =useState( {
             departureAirport:false,
             checkin:false,
@@ -25,16 +25,16 @@ const SearchForm = () =>{
             //event.target.value
             const {value} = e.target;
                  if (moment(value) > moment(checkout)) {
- setErrors((err) => ({ ...err, checkout: true }))
+            seterrors((err) => ({ ...err, checkout: true }))
  }
             setCheckin(value);
             if(e.target){
                 seterrors({...errors,checkin:false})
             }
     if (e.target.value) {
- setErrors((err) => ({ ...err, checkin: false }))
+        seterrors((err) => ({ ...err, checkin: false }))
  } else {
- setErrors((err) => ({ ...err, checkoin: true }))
+        seterrors((err) => ({ ...err, checkoin: true }))
  }
 
         }
@@ -42,23 +42,23 @@ const SearchForm = () =>{
             //event.target.value
             const {value} = e.target;
             if (moment(checkin) > moment(value)) {
- setErrors((err) => ({ ...err, checkout: true }))
+        seterrors((err) => ({ ...err, checkout: true }))
  }
             setCheckout(value);
             if(e.target){
                 seterrors({...errors,checkout:false})
             }
             if (e.target.value) {
-         setErrors((err) => ({ ...err, checkout: false }))
+         seterrors((err) => ({ ...err, checkout: false }))
         } else {
-        setErrors((err) => ({ ...err, checkout: true }))
+        seterrors((err) => ({ ...err, checkout: true }))
          }
         }
     
         const submitHandler = (e) => {
                 e.preventDefault();
                if (moment(checkin) > moment(checkout)) {
-        setErrors((err) => ({ ...err, checkout: true }))
+        seterrors((err) => ({ ...err, checkout: true }))
          }
         else{
             if (departureAirport && checkin && checkout){
