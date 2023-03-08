@@ -24,31 +24,43 @@ const SearchForm = () =>{
         const checkinHandler = (e) => {
             //event.target.value
             const {value} = e.target;
+                 if (moment(value) > moment(checkout)) {
+ setErrors((err) => ({ ...err, checkout: true }))
+ }
             setCheckin(value);
             if(e.target){
                 seterrors({...errors,checkin:false})
             }
-    
+    if (e.target.value) {
+ setErrors((err) => ({ ...err, checkin: false }))
+ } else {
+ setErrors((err) => ({ ...err, checkoin: true }))
+ }
+
         }
         const checkoutHandler = (e) => {
             //event.target.value
             const {value} = e.target;
+            if (moment(checkin) > moment(value)) {
+ setErrors((err) => ({ ...err, checkout: true }))
+ }
             setCheckout(value);
             if(e.target){
                 seterrors({...errors,checkout:false})
             }
-    
+            if (e.target.value) {
+         setErrors((err) => ({ ...err, checkout: false }))
+        } else {
+        setErrors((err) => ({ ...err, checkout: true }))
+         }
         }
     
         const submitHandler = (e) => {
-                if (moment(checkin) > moment(checkout)) {
- setErrors((err) => ({ ...err, checkout: true }))
- }
-            console.log(departureAirport)
-            console.log(checkin)
-            console.log(checkout)
-            //event.target.value
-            e.preventDefault();
+                e.preventDefault();
+               if (moment(checkin) > moment(checkout)) {
+        setErrors((err) => ({ ...err, checkout: true }))
+         }
+        else{
             if (departureAirport && checkin && checkout){
                 alert("Form has been submitted");
             }else{
@@ -57,6 +69,10 @@ const SearchForm = () =>{
                     checkin:!checkin,
                     checkout:!checkout
                 });
+            }
+            console.log(departureAirport);
+            console.log(checkin);
+            console.log(checkout);
             }
             
         }
