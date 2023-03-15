@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/HomePage.js";
 import Layout from "./component/Layout.js";
 import Login from "./pages/Login.js";
-import Available from './pages/Available.js';
+import AirportAvailability from './pages/AirportAvailability.js';
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
             <Route path="/" index element={<Homepage />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<Homepage />} />
-            <Route path="results" element={<Available/>} />
+            <Route path="results" element={<AirportAvailability/>} />
           </Route>
         </Routes>
       </BrowserRouter>
