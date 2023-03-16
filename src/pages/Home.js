@@ -1,7 +1,7 @@
 import React from "react";
 
 import SearchForm from "./SearchForm";
-function HomePage() {
+function Home() {
   return (
     <>
       <div id="app" className="generic">
@@ -76,4 +76,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;
