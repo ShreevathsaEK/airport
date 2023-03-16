@@ -1,7 +1,7 @@
 import './style.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/HomePage.js";
-import Layout from "./component/Layout.js";
+import Layout from "./components/Layout.js";
 import Login from "./pages/Login.js";
 import AirportAvailability from './pages/AirportAvailability.js';
 
