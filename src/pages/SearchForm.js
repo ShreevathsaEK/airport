@@ -14,7 +14,7 @@ const SearchForm = () => {
   const [Loading, setLoading] = useState(true);
   const fetchData = async () => {
     setLoading(true);
-    const { data } = await axios.get("http://43.205.1.85:9009/v1/airports");
+    const { data } = await axios.get("https://rl.talentcoco.in/v1/airports");
     setLoading(false);
     setRecords(data.results);
   };
